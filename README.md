@@ -40,3 +40,5 @@ int main(void) {
 ## Looking for your support
 
 If you would like to see 128x32 displays (or any other I2C SSD1306-based displays) supported by my library, please do a donation, so that I could buy one of those displays to improve my library.
+
+I currently accept [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K65LZXQXASC8E) and [Bitcoin](https://blockchain.info/address/13XFkvDBm8iqbwVC1egYZ8sCSu72eebJ7N) donations.
