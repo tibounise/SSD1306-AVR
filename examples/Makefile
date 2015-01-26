@@ -1,14 +1,17 @@
-CC = g++ -O2 -Wall
+CXX = g++
+CXXFLAGS += -D SIMULATOR -O2 -Wall
 TARGET = example1
-OBJS = main.o ../simulator/I2C.o ../SSD1306.o ../Framebuffer.o
+OBJS = ../simulator/I2C.o ../SSD1306.o ../Framebuffer.o example1.o
 
 all: example1
 
 $(TARGET): $(OBJS)
-	$(CC) $(LDFLAGS) $(OBJS) -o $(TARGET) -D SSD1306_SIMULATOR
+	$(CC) $(LDFLAGS) $(OBJS) -o $(TARGET) -D SIMULATOR
 
 %.o: %.cpp %.c
-	$(CC) -c $< -D SSD1306_SIMULATOR -Wc++11-extensions
+	$(CC) -c $< -D SIMULATOR
 
 clean:
-	rm $(TARGET) $(OBJS)
+	rm -f $(TARGET) $(OBJS)
+
+.PHONY: all example1 clean
