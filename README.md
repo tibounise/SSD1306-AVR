@@ -68,7 +68,7 @@ It is very experimental, maybe not usefull.
 
 ![The simulator in action](img/simulator1.png)
 
-There are some example programs using the simulator, in `/examples/`. Compile the simulator (requires SDL2) and the exampke program, then run your example program like this :
+There are some example programs using the simulator, in `/examples/`. Compile the simulator (requires SDL2) and the example program, then run your example program like this :
 
 ```shell
 ./example1 | ../simulator/simulator
