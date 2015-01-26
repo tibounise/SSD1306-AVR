@@ -71,7 +71,7 @@ It is very experimental, maybe not usefull.
 There are some example programs using the simulator, in `/examples/`. Compile the simulator (requires SDL2) and the exampke program, then run your example program like this :
 
 ```shell
-./example1 | ../simulator/fb-sim
+./example1 | ../simulator/simulator
 ```
 
 ## Looking for your support
