@@ -25,11 +25,11 @@ OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <http://unlicense.org/>
 */
 
-//#ifdef SSD1306_SIMULATOR
+#ifdef SIMULATOR
 #include "simulator/I2C.h"
-//#else
-//#include "I2C.h"
-//#endif
+#else
+#include "I2C.h"
+#endif
 
 #define SSD1306_DEFAULT_ADDRESS 0x78
 #define SSD1306_SETCONTRAST 0x81

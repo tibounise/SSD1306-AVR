@@ -31,7 +31,6 @@ For more information, please refer to <http://unlicense.org/>
 I2C::I2C() {}
 
 void I2C::init(uint8_t address) {
-    this->address = address;
 }
 
 uint8_t I2C::start() {

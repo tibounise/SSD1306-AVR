@@ -25,6 +25,9 @@ OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <http://unlicense.org/>
 */
 
+#ifndef _I2C_H_
+#define _I2C_H_
+
 #include <stdint.h>
 
 class I2C {
@@ -34,7 +37,5 @@ public:
     uint8_t start();
     uint8_t write(uint8_t data);
     void stop(void);
-private:
-    uint8_t address;
-    uint8_t twi_status_register;
 };
+#endif

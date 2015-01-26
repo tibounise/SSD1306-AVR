@@ -25,7 +25,14 @@ OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <http://unlicense.org/>
 */
 
+#include <stdint.h>
 #include "SSD1306.h"
+
+#ifdef SIMULATOR
+#include "simulator/I2C.h"
+#else
+#include "I2C.h"
+#endif
 
 SSD1306::SSD1306() {
     i2c.init(SSD1306_DEFAULT_ADDRESS);
