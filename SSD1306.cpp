@@ -95,11 +95,11 @@ void SSD1306::invert(uint8_t inverted) {
 void SSD1306::sendFramebuffer(uint8_t *buffer) {
     sendCommand(SSD1306_COLUMNADDR);
     sendCommand(0x00);
-    sendCommand(127);
+    sendCommand(0x7F);
 
     sendCommand(SSD1306_PAGEADDR);
-    sendCommand(0);
-    sendCommand(7);
+    sendCommand(0x00);
+    sendCommand(0x07);
 
     // We have to send the buffer as 16 bytes packets
     // Our buffer is 1024 bytes long, 1024/16 = 64

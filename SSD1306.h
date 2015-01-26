@@ -25,7 +25,11 @@ OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <http://unlicense.org/>
 */
 
-#include "I2C.h"
+//#ifdef SSD1306_SIMULATOR
+#include "simulator/I2C.h"
+//#else
+//#include "I2C.h"
+//#endif
 
 #define SSD1306_DEFAULT_ADDRESS 0x78
 #define SSD1306_SETCONTRAST 0x81
@@ -52,6 +56,10 @@ For more information, please refer to <http://unlicense.org/>
 #define SSD1306_SEGREMAP 0xA0
 #define SSD1306_CHARGEPUMP 0x8D
 #define SSD1306_SWITCHCAPVCC 0x2
+
+#define SSD1306_WIDTH 128
+#define SSD1306_HEIGHT 64
+#define SSD1306_BUFFERSIZE 1024
 
 class SSD1306{
 private: 

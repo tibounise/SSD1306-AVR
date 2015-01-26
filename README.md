@@ -2,16 +2,16 @@
 
 SSD1306-AVR is a C++ library for using SSD1306, 128x64, monochrome OLED displays. Currently only the I2C version of the display is supported.
 
-The I2C of the display is set up in SSD1306.h :
+The I2C address of the display is set up in SSD1306.h :
 ```C
 #define SSD1306_DEFAULT_ADDRESS 0x78
 ```
 
 The library is written in pure C++. You'll only need avr-libc, Arduino framework is not needed.
 
-This library is under a VERY permissive license. Do anything with it, but if something goes wrong, it is YOUR problem (= NO WARRANTY).
+This library is released under a VERY permissive license. Do anything with it, but if something goes wrong, it is YOUR problem (= NO WARRANTY AT ALL).
 
-## Example code
+## Example code (no framebuffer used)
 
 ```C++
 #include <stdint.h>
@@ -35,6 +35,43 @@ int main(void) {
 
     return 0;
 }
+```
+
+## Another example code (using the framebuffer)
+
+```C++
+#include <stdint.h>
+#include "Framebuffer.h"
+
+int main(void) {
+    Framebuffer fb;
+
+    fb.drawRectangle(1,1,126,62);
+    fb.drawRectangle(3,3,124,60);
+    fb.drawRectangle(5,5,122,58);
+    fb.drawRectangle(7,7,120,56);
+    fb.drawRectangle(9,9,118,54);
+    fb.drawRectangle(11,11,116,52);
+    fb.drawRectangle(13,13,114,50);
+    
+    fb.show();
+
+    return 0;
+}
+```
+
+As you can see the framebuffer API is quite easy to understand.
+
+## SSD1306 simulator
+
+It is very experimental, maybe not usefull.
+
+![The simulator in action](img/simulator1.png)
+
+There are some example programs using the simulator, in `/examples/`. Compile the simulator (requires SDL2) and the exampke program, then run your example program like this :
+
+```shell
+./example1 | ../simulator/fb-sim
 ```
 
 ## Looking for your support
