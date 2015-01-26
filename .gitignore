@@ -1,4 +1,4 @@
 .DS_Store
 *.o
 examples/example1
-simulator/fb-sim
+simulator/simulator

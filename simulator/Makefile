@@ -1,9 +1,9 @@
-all: fb-sim
+all: simulator
 
-fb-sim: main.c
-	g++ main.c -o fb-sim `sdl2-config --cflags`  -lSDL2main -lSDL2 -framework Cocoa -DSSD1306_SIMULATOR
+simulator: main.c
+	g++ main.c -o simulator `sdl2-config --cflags`  -lSDL2main -lSDL2 -framework Cocoa -D SIMULATOR
 
 clean:
-	rm fb-sim
+	rm simulator
 
 .PHONY: all fb-sim clean
