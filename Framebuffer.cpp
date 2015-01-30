@@ -11,7 +11,7 @@ void Framebuffer::drawBitmap(const uint8_t *progmem_bitmap, uint8_t height, uint
 
     for (uint8_t current_y = 0; current_y < height; current_y++) {
         for (uint8_t current_x = 0; current_x < width; current_x++) {
-            //current_byte = pgm_read_byte(progmem_bitmap + current_y*byte_width + current_x/8);
+            current_byte = pgm_read_byte(progmem_bitmap + current_y*byte_width + current_x/8);
             if (current_byte & (128 >> (current_x&7))) {
                 this->drawPixel(current_x+pos_x,current_y+pos_y,1);
             } else {
@@ -26,7 +26,7 @@ void Framebuffer::drawBuffer(const uint8_t *progmem_buffer) {
 
     for (uint8_t y_pos = 0; y_pos < 64; y_pos++) {
         for (uint8_t x_pos = 0; x_pos < 128; x_pos++) {
-            //current_byte = pgm_read_byte(progmem_buffer + y_pos*16 + x_pos/8);
+            current_byte = pgm_read_byte(progmem_buffer + y_pos*16 + x_pos/8);
             if (current_byte & (128 >> (x_pos&7))) {
                 this->drawPixel(x_pos,y_pos,1);
             } else {
