@@ -10,7 +10,7 @@
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
 #define SCREEN_TYPE SCREEN_BLUE_YELLOW
-#define BUFFER_SIZE (SCREEN_WIDTH*SCREEN_HEIGHT)/8
+#define BUFFER_SIZE 1024
 
 struct ssd1306_register {
     // Display buffer

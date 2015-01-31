@@ -25,6 +25,9 @@ OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <http://unlicense.org/>
 */
 
+#ifndef _I2C_H_
+#define _I2C_H_
+
 #include <stdint.h>
 #include <util/twi.h>
 
@@ -41,3 +44,5 @@ private:
     uint8_t address;
     uint8_t twi_status_register;
 };
+
+#endif

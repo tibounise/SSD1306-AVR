@@ -1,5 +1,7 @@
 #include <stdint.h>
-//#include <avr/pgmspace.h>
+#ifndef SIMULATOR
+#include <avr/pgmspace.h>
+#endif
 #include "SSD1306.h"
 
 class Framebuffer {

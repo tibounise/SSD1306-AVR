@@ -59,7 +59,7 @@ For more information, please refer to <http://unlicense.org/>
 
 #define SSD1306_WIDTH 128
 #define SSD1306_HEIGHT 64
-#define SSD1306_BUFFERSIZE 1024
+#define SSD1306_BUFFERSIZE (SSD1306_WIDTH*SSD1306_HEIGHT)/8
 
 class SSD1306{
 private: 
