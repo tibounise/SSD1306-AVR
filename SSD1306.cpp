@@ -55,6 +55,7 @@ SSD1306::SSD1306() {
     sendCommand(SSD1306_CHARGEPUMP);
     sendCommand(0x14);
     
+    // Horizontal memory mode
     sendCommand(SSD1306_MEMORYMODE);
     sendCommand(0x00);
     
@@ -80,7 +81,7 @@ SSD1306::SSD1306() {
     // Non-inverted display
     sendCommand(SSD1306_NORMALDISPLAY);
 
-    // Turn display on
+    // Turn display back on
     sendCommand(SSD1306_DISPLAYON);
 }
 
