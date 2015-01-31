@@ -49,10 +49,12 @@ int main(int argc, char *argv[]) {
                         rerender = true;
                         break;
                     case SSD1306_NORMALDISPLAY:
+                        printf("LOG : Non-inverted colors\n");
                         display_register.inverted = false;
                         rerender = true;
                         break;
                     case SSD1306_INVERTDISPLAY:
+                        printf("LOG : Inverted colors\n");
                         display_register.inverted = true;
                         rerender = true;
                         break;
