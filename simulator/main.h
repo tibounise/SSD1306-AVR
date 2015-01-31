@@ -28,8 +28,7 @@ struct ssd1306_register {
 };
 
 ssd1306_register initDisplayRegister();
-void drawWhiteScreen(SDL_Renderer *renderer);
-void drawBlackScreen(SDL_Renderer *renderer);
+void fillScreen(SDL_Renderer *renderer,int color);
 void drawPixel(SDL_Renderer* renderer, int x, int y);
 void drawBuffer(ssd1306_register display_register,SDL_Renderer *renderer,uint8_t *buffer);
 int handleExit(void *running, SDL_Event* event);

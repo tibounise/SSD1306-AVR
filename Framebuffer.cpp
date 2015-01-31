@@ -106,6 +106,21 @@ void Framebuffer::drawRectangle(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2) 
     this->drawVLine(x2,y1,height);
 }
 
+void Framebuffer::drawRectangle(uint8_t x1, uint8_t y1, uint8_t x2, uint8_t y2, uint8_t fill) {
+    if (!fill) {
+        this->drawRectangle(x1,y1,x2,y2);
+    } else {
+        uint8_t length = x2 - x1 + 1;
+        uint8_t height = y2 - y1;
+
+        for (int x = 0; x < length; ++x) {
+            for (int y = 0; y <= height; ++y) {
+                this->drawPixel(x1+x,y+y1);
+            }
+        }
+    }
+}
+
 void Framebuffer::clear() {
     for (uint16_t buffer_location = 0; buffer_location < SSD1306_BUFFERSIZE; buffer_location++) {
         this->buffer[buffer_location] = 0x00;

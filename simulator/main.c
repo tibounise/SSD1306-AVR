@@ -81,11 +81,7 @@ int main(int argc, char *argv[]) {
         if (rerender) {
             rerender = false;
 
-            if (display_register.inverted) {
-                drawBlackScreen(renderer);
-            } else {
-                drawBlackScreen(renderer);
-            }
+            fillScreen(renderer,0);
 
             if (display_register.status) {
                 drawBuffer(display_register,renderer,display_register.buffer);
@@ -120,27 +116,18 @@ ssd1306_register initDisplayRegister() {
     return display_register;
 }
 
-void drawBlackScreen(SDL_Renderer *renderer) {
+void fillScreen(SDL_Renderer *renderer,int color) {
     SDL_Rect blackrect;
     blackrect.x = 0;
     blackrect.y = 0;
     blackrect.w = SCREEN_WIDTH;
     blackrect.h = SCREEN_HEIGHT;
 
-    SDL_SetRenderDrawColor(renderer,0x00,0x00,0x00,128);
-
-    SDL_RenderFillRect(renderer,&blackrect);
-    SDL_RenderPresent(renderer);
-}
-
-void drawWhiteScreen(SDL_Renderer *renderer) {
-    SDL_Rect blackrect;
-    blackrect.x = 0;
-    blackrect.y = 0;
-    blackrect.w = SCREEN_WIDTH;
-    blackrect.h = SCREEN_HEIGHT;
-
-    SDL_SetRenderDrawColor(renderer,0xFF,0xFF,0xFF,128);
+    if (color == 0) {
+        SDL_SetRenderDrawColor(renderer,0x00,0x00,0x00,128);
+    } else if (color == 1) {
+        SDL_SetRenderDrawColor(renderer,0xFF,0xFF,0xFF,128);
+    }
 
     SDL_RenderFillRect(renderer,&blackrect);
     SDL_RenderPresent(renderer);
