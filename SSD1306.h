@@ -56,6 +56,7 @@ For more information, please refer to <http://unlicense.org/>
 #define SSD1306_SEGREMAP 0xA0
 #define SSD1306_CHARGEPUMP 0x8D
 #define SSD1306_SWITCHCAPVCC 0x2
+#define SSD1306_NOP 0xE3
 
 #define SSD1306_WIDTH 128
 #define SSD1306_HEIGHT 64

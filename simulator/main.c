@@ -56,6 +56,9 @@ int main(int argc, char *argv[]) {
                         display_register.inverted = true;
                         rerender = true;
                         break;
+                    case SSD1306_NOP:
+                        printf("LOG : NOP command received\n");
+                        break;
                     default:
                         printf("LOG : Received unknown command : 0x%x\n",current_byte);
                         break;
