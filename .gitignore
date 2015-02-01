@@ -1,4 +1,4 @@
 .DS_Store
 *.o
-examples/example1
+examples/example1/example1
 simulator/simulator
