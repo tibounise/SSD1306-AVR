@@ -62,6 +62,31 @@ int main(void) {
 
 As you can see the framebuffer API is quite easy to understand.
 
+## Images !
+
+You can display images using the Framebuffer, though you will need to convert those images using [Esther](https://github.com/tibounise/Esther).
+
+```C++
+#include <stdint.h>
+#include <avr/pgmspace.h>
+#include "Framebuffer.h"
+
+const uint8_t image[] PROGMEM = {
+    ...
+};
+
+int main(void) {
+
+    Framebuffer fb;
+
+    fb.drawBitmap(image,64,128,0,0);
+    
+    fb.show();
+
+    return 0;
+}
+```
+
 ## SSD1306 simulator
 
 It is very experimental, maybe not usefull.
